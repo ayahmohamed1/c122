@@ -4,13 +4,13 @@ import GiftClient from '@/components/GiftClient'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://agiftforyouuu.vercel.app'),
-  title: 'Happy Birthday Anas! 🎂',
-  description: 'A special birthday message for Anas 🤍',
+  title: 'Happy Anniversary Anas 🤍',
+  description: 'A special anniversary surprise for Anas 🤍',
   openGraph: {
-    title: 'Happy Birthday Anas! 🎂',
-    description: 'A special birthday message for Anas 🤍',
+    title: 'Happy Anniversary Anas 🤍',
+    description: 'A special anniversary surprise for Anas 🤍',
     url: 'https://agiftforyouuu.vercel.app',
-    siteName: 'Birthday Gift',
+    siteName: 'Happy Anniversary Anas',
     type: 'website',
     images: [
       {
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Happy Birthday Anas Cat 🐱🎂',
+        alt: 'Happy Anniversary Anas 🤍',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Happy Birthday Anas! 🎂',
-    description: 'A special birthday message for Anas 🤍',
+    title: 'Happy Anniversary Anas 🤍',
+    description: 'A special anniversary surprise for Anas 🤍',
     images: ['https://agiftforyouuu.vercel.app/images/og-cat.jpg'],
   },
 }

@@ -38,11 +38,11 @@ async function generateOG() {
       <text x="1040" y="490" fill="#dfc08f" font-size="24" opacity="0.6">✧</text>
 
       <!-- Badge / Header Text -->
-      <rect x="425" y="55" width="350" height="42" rx="21" fill="rgba(223, 192, 143, 0.2)" stroke="#dfc08f" stroke-width="1.5"/>
-      <text x="600" y="83" font-family="'Nunito', sans-serif" font-weight="800" font-size="19" fill="#f7eedc" text-anchor="middle" letter-spacing="3">HAPPY BIRTHDAY ANAS</text>
+      <rect x="350" y="50" width="500" height="48" rx="24" fill="rgba(223, 192, 143, 0.22)" stroke="#dfc08f" stroke-width="1.5"/>
+      <text x="600" y="82" font-family="'Nunito', sans-serif" font-weight="800" font-size="21" fill="#f7eedc" text-anchor="middle" letter-spacing="3">HAPPY ANNIVERSARY ANAS 🤍</text>
 
       <!-- Footer Text -->
-      <text x="600" y="585" font-family="'Playfair Display', serif" font-weight="700" font-size="24" fill="#dfc08f" text-anchor="middle" letter-spacing="2">A Special Gift For You 🎁</text>
+      <text x="600" y="585" font-family="'Playfair Display', serif" font-weight="700" font-size="25" fill="#dfc08f" text-anchor="middle" letter-spacing="2">Happy Anniversary Anas ✨</text>
     </svg>
   `);
 
@@ -69,7 +69,7 @@ async function generateOG() {
 
   // Also create a square 600x600 preview (some apps prefer 1:1)
   const catSquareBuffer = await sharp('public/images/cat.png')
-    .resize({ height: 500, fit: 'contain' })
+    .resize({ height: 460, fit: 'contain' })
     .toBuffer();
 
   const squareSvg = Buffer.from(`
@@ -82,6 +82,9 @@ async function generateOG() {
       </defs>
       <rect width="600" height="600" fill="url(#bgGlowSq)"/>
       <rect x="15" y="15" width="570" height="570" rx="16" fill="none" stroke="#dfc08f" stroke-width="2" stroke-opacity="0.6"/>
+      <rect x="90" y="32" width="420" height="42" rx="21" fill="rgba(223, 192, 143, 0.22)" stroke="#dfc08f" stroke-width="1.5"/>
+      <text x="300" y="60" font-family="'Nunito', sans-serif" font-weight="800" font-size="16" fill="#f7eedc" text-anchor="middle" letter-spacing="2">HAPPY ANNIVERSARY ANAS 🤍</text>
+      <text x="300" y="565" font-family="'Playfair Display', serif" font-weight="700" font-size="18" fill="#dfc08f" text-anchor="middle" letter-spacing="1">Happy Anniversary Anas ✨</text>
     </svg>
   `);
 

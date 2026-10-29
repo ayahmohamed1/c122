@@ -52,8 +52,8 @@ export default function GiftClient({ data }: Props) {
   const [isShaking, setIsShaking] = useState(false)
   const [unlockSuccess, setUnlockSuccess] = useState(false)
 
-  // Countdown state for 15/11/2026
-  const targetDateStr = data.anniversaryTargetDate || '2026-11-15T00:00:00'
+  // Counter state from 15/11/2025
+  const targetDateStr = data.anniversaryTargetDate || '2025-11-15T00:00:00'
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -105,20 +105,15 @@ export default function GiftClient({ data }: Props) {
     }
   }, [data.musicUrl])
 
-  // Live Countdown interval
+  // Live Counter interval (Counting time together since 15/11/2025)
   useEffect(() => {
     const calculateCountdown = () => {
       const parsedTarget = new Date(targetDateStr).getTime()
       const target = isNaN(parsedTarget)
-        ? new Date(2026, 10, 15, 0, 0, 0).getTime()
+        ? new Date(2025, 10, 15, 0, 0, 0).getTime()
         : parsedTarget
       const now = Date.now()
-      const diff = target - now
-
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isComplete: true })
-        return
-      }
+      const diff = Math.abs(now - target)
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24))
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
@@ -570,7 +565,7 @@ export default function GiftClient({ data }: Props) {
               <h1 className="anniversary-headline">
                 {data.anniversaryTitle || 'HAPPY 1ST ANNIVERSARY'}
               </h1>
-              <p className="anniversary-date-tag">15 November 2026 ✦ Our Forever Date</p>
+              <p className="anniversary-date-tag">15 November 2025 ✦ Our Forever Date</p>
             </div>
 
             {/* 2. Photo frame loaded from public folder */}
@@ -589,10 +584,12 @@ export default function GiftClient({ data }: Props) {
               </div>
             </div>
 
-            {/* 3. Live Countdown to 15/11/2026 */}
+            {/* 3. Live Counter from 15/11/2025 */}
             <div className="countdown-section">
               <p className="countdown-subtitle handwritten">
-                Counting down to 15/11/2026 ✨
+                {typeof window !== 'undefined' && Date.now() < new Date(targetDateStr).getTime()
+                  ? 'Counting down to 15/11/2025 ✨'
+                  : 'Together since 15/11/2025 ✨'}
               </p>
               <div className="countdown-timer-grid">
                 <div className="countdown-unit-card">

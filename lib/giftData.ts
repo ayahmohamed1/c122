@@ -91,7 +91,7 @@ const anasGift: GiftData = {
   songTitle: "Our Special Track",
   anniversaryTitle: "HAPPY 1ST ANNIVERSARY",
   anniversaryImage: "/images/anniversary.jpg",
-  anniversaryTargetDate: "2026-11-15T00:00:00",
+  anniversaryTargetDate: "2025-11-15T00:00:00",
   anniversaryLetterTitle: "HAPPY 1st ANNIVERSARY NOSYYYY.",
   anniversaryLetterMessage: defaultAnniversaryMessage,
   ourBestMemories: defaultOurBestMemories,
